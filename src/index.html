@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Othello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/Styles.css">
+    <script src="scripts/General.js"></script>
+    <script src="scripts/Point.js"></script>
+    <script src="scripts/AI.js"></script>
+    <script src="scripts/Cell.js"></script>
+    <script src="scripts/Main.js"></script>
+    <script src="scripts/Multiplayer.js"></script>
+    <script src="scripts/Singleplayer.js"></script>
+  </head>
+  <body>
+    <div id="logo" class="background">
+      OTHELLO
+    </div>
+    <div id="ident">
+      <div id="req" style="display: block;">
+	Group: <input type="text" id="group" value="521">
+	Login: <input type="text" id="nick">
+	Password: <input type="password" id="pwd">
+	<input type="button" id="submit" value="OK">
+      </div>
+      <div id="succ" style="display: none;">
+	<span id="loged">User: None</span>
+	<input type="button" id="logout" value="Log out">
+      </div>
+    </div>
+    <div id="comm" class="side background">
+      <div style="margin-top: 5%; text-align: center;">COMMANDS</div>
+      <div class="list">
+	<div style="margin-top: 30%;">
+	  <div class="button" onclick="openWindow('instr')">INSTRUCTIONS</div>
+	  <div class="button" id="rank" onclick="openWindow('score')">SCOREBOARD</div>
+	  <div class="button" id="solo" onclick="openWindow('soloRank')">SOLO RANK</div>
+	  <div class="button" onclick="openWindow('config')">OPTIONS</div>
+	</div>
+	<div style="margin-top: 20%;">
+	  <div class="button" onclick="openWindow('game')">BOARD</div>
+	  <div id="pass" class="button">PASS</div>
+	  <div id="surrender" class="button">LEAVE</div>
+	</div>
+	<div style="margin-top: 20%;">
+	  <div id="start" class="button">START</div>
+	</div>
+      </div>
+    </div>
+    <div id="cictm" class="background">
+      <div id="screen">
+	<div id="config">
+	  Singleplayer or multiplayer:<br>
+	  <input type="radio" id="singleplayer" class="radio" name="SoM" value="singleplayer" checked="checked">
+	  <label for="singleplayer">Singleplayer</label><br>
+	  <input type="radio" id="multiplayer" class="radio" name="SoM" value="multiplayer">
+	  <label for="multiplayer">Multiplayer</label><br>
+	  <br>Player color:<br>
+	  <input type="radio" id="white" class="radio" name="col" value="whiteCircle.png" checked="checked">
+	  <label for="white">White</label><br>
+	  <input type="radio" id="black" class="radio" name="col" value="blackCircle.png">
+	  <label for="black">Black</label><br>
+	  <br>Difficulty:<br>
+	  <input type="radio" id="easy" class="radio" name="diff" value="easy" checked="checked">
+	  <label for="easy">Easy</label><br>
+	  <input type="radio" id="hard" class="radio" name="diff" value="hard">
+	  <label for="hard">Hard</label><br>
+	</div>
+	<div id="score">
+	  <table id="rankTable" class="table">
+	    <tr>
+	      <th colspan=3>SCOREBOARD</th>
+	    </tr>
+	    <tr>
+	      <th>PLAYER</th>
+	      <th>WINS</th>
+	      <th>GAMES</th>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	  </table>
+	</div>
+	<div id="soloRank">
+	  <table id="soloTable" class="table">
+	    <tr>
+	      <th colspan=3>SOLO RANK</th>
+	    </tr>
+	    <tr>
+	      <th>WINS</th>
+	      <th>LOSES</th>
+	      <th>TIES</th>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td></td>
+	      <td></td>
+	    </tr>
+	  </table>
+	</div>
+	<div id="instr">
+	  <div>
+	    <ul>
+	      <li>Othello is a strategy board game played between 2 players. One player plays black and the other white. Black always starts the game
+	      <li>The board will start with 2 black discs and 2 white discs at the centre of the board.
+	      <li>Then the game alternates between white and black until:
+		<ul>
+		  <li>one player can not make a valid move to outflank the opponent.
+		  <li>both players have no valid moves.
+		</ul>
+	      <li>When a player has no valid moves, he pass his turn and the opponent continues.
+	      <li>A player can pass their turn when there are no available moves
+	      <li>When both players can not make a valid move the gane ends.
+	      <li>A move is made by placing a disc of the player's color on the board in a position that "out-flanks" one or more of the opponent's discs.
+	      <li>A disc or row of discs is outflanked when it is surrounded at the ends by discs of the opposite color.
+	      <li>A disc may outflank any number of discs in one or more rows in any direction (horizontal, vertical, diagonal).
+	      <li>All the discs which are outflanked will be flipped, even if it is to the player's advantage not to flip them.
+	      <li>If you can't outflank and flip at least one opposing disc, you must pass your turn. However, if a move is available to you, you can't forfeit your turn.
+	      <li>Once a disc has been placed on a square, it can never be moved to another square later in the game.
+	      <li>The goal is to get the majority of colour discs on the board at the end of the game.
+	      <li>You can change your setting in the options menu.
+	      <li>To start a game with current setting, press "START". This will reset the board.
+	      <li>If you want to forfeit, press "SURRENDER" button.
+	    </ul>
+	  </div>
+	</div>
+	<div id="game">
+	  <div id="waiting" style="display: none;">
+	    <div style="margin-left: 110px;">Waiting for Opponent</div>
+	  </div>
+	  <canvas id="waitingCanvas" width=100 height=100 style="display: none;">
+	  </canvas>
+	</div>
+      </div>
+      <div id="msgs">
+	<div id="message" class="msg">
+	  WELCOME
+	</div>
+      </div>
+    </div>
+    <div id="state" class="side background">
+      <div style="margin-top: 5%;">STATE</div>
+      <div style="margin-top: 30%;">WHITE<div id="whiteCount">2</div></div>
+      <div style="margin-top: 30%;">BLACK<div id="blackCount">2</div></div>
+      <div style="margin-top: 30%;">EMPTY<div id="emptyCount">60</div></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #D2B48C;
+    margin: auto;
+    font-family: fantasy,serif;
+    font-variant: small-caps;
+}
+
+#logo {
+    background-image: url("../images/logoBackgroung.jpg");
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    vertical-align: 20px;
+    color: white;
+    font-size: 110px;
+    font-family: "Brush Script MT", "Brush Script Std", cursive;
+}
+
+#ident {
+    background-color: #D2B48C;
+    opacity: 50%;
+    width: 100%;
+    height: 40px;
+    text-align: right;
+    font-size: 20px;
+    padding-right: 10px;
+    color: #000000;
+}
+
+.side {
+    width: 20%;
+    height: 807px;
+    text-align: center;
+    color: #000000;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+#comm {
+    background-image: url("../images/commandsBkg.jpg");
+    text-align: left;
+}
+
+#cictm {
+    display: flex;
+    flex-flow: column wrap;
+    background-image: url("https://eskipaper.com/images/japanese-background-3.jpg");
+    width: 60%;
+    height: 807px;
+}
+
+#state {
+    background-image: url("../images/stateBkg.jpg");
+    text-align: center;
+}
+
+#screen {
+    display: block;
+    width: 100%;
+    height: 75%;
+}
+
+#msgs {
+    background-color: #FFDAB9;
+    opacity: 40%;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+}
+
+.msg {
+    margin-top: 60px;
+    color: black;
+}
+
+.list {
+    text-align: justify;
+    margin-left: 7%;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.button:hover {
+    color: #DEB887;
+}
+
+#config {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+
+#score {
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    word-spacing: 100px;
+    font-size: 60px;
+    overflow: auto;
+}
+
+#soloRank {
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    border-spacing: 50px;
+    font-size: 60px;
+}
+
+.table {
+    margin: auto;
+    border-spacing: 50px;
+}
+
+#instr {
+    display: none;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+}
+
+#game {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#waiting {
+    background-color: grey;
+    display: none;
+    position: absolute;
+    top: 42%;
+    left: 40%;
+    height: 100px;
+    width: 295px;
+    font-size: 40px;
+    opacity: 0.9;
+}
+
+#waitingCanvas {
+    position: absolute;
+    display: none;
+    top: 42%;
+    left: 40%;
+    width: 100px;
+    height: 100px;
+}
+
+.board {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    height: 590px;
+    width: 590px;
+    margin: auto;
+    padding: 5px;
+}
+
+.cell {
+    cursor: pointer;
+    width: 66px;
+    height: 66px;
+    margin: auto;
+}
+
+.piece {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 80%;
+}
+
+.radio {
+    width: 2em;
+    height: 2em;
+}
